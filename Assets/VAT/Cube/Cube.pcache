@@ -1,0 +1,16 @@
+pcache
+format ascii 1.0
+comment Exported with PCache.cs
+elements 8
+property float position.x
+property float position.y
+property float position.z
+end_header
+1 1 -1
+1 1 1
+1 -1 -1
+1 -1 1
+-1 1 -1
+-1 1 1
+-1 -1 -1
+-1 -1 1
