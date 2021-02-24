@@ -16,8 +16,11 @@ The scenes contained in this project are:
 - FinalPrototypeScene : The final prototype scene with polished visuals, camera control, and responsive environments.
 
 ## VAT Generation
+The VATGenerator script reads the vertices of a meshfilter or skinnedmeshrenderer gameobject and for each frame of a given AnimationClip, will read the position of each vertex in the mesh on each frame of the clip. The produced texture has dimensions [vertex_count, frame_count] with color RGB corresponding to position (x,y,z). This texture can then be read by the VFX graph system to place particles at each vertex position, recreating the mesh purely with VFX graph.  
 
 ## Reactive VFX System
+By combining CPU particles, 
+
 
 ## Contributing
 I would like to thank the following in aiding me to completing this project:
