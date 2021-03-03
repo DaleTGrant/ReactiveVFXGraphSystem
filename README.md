@@ -19,7 +19,11 @@ The scenes contained in this project are:
 The VATGenerator script reads the vertices of a meshfilter or skinnedmeshrenderer gameobject and for each frame of a given AnimationClip, will read the position of each vertex in the mesh on each frame of the clip. The produced texture has dimensions [vertex_count, frame_count] with color RGB corresponding to position (x,y,z). This texture can then be read by the VFX graph system to place particles at each vertex position, recreating the mesh purely with VFX graph.  
 
 ## Reactive VFX System
-By combining CPU particles, 
+By combining CPU particles, OnParticleCollision events, and Textures; I created a VFX Graph system that receives up to 5 simultaneous particle collision events with a collider as a texture and imposes a force on particles nearby to those collision locations according to external CPU particles velocity. Once a GPU particle has a velocity, it is slowed by linear drag, until it reaches a stop. Upon stopping the particle returns to its original target position according to the current VAT the system is reading from.
+
+This system for the player controlled character is connected to an animation controller that selects the current VAT and the animation of the underlying collision system to obey. Upon state change, the VFX graph system lerps between the positions of the current VAT and the Next VAT.
+
+The final result of this system is a player-controlled character comprised of VFX graph particles that are influenced by external CPU particles in the environment and behave in a way that represents damage.
 
 
 ## Contributing
